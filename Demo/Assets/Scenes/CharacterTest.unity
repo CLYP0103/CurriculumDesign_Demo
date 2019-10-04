@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4455353, g: 0.4952109, b: 0.57411915, a: 1}
+  m_IndirectSpecularColor: {r: 0.44553506, g: 0.49521053, b: 0.5741185, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2543,6 +2543,7 @@ MonoBehaviour:
   m_Sowrd: {fileID: 0}
   m_Gun: {fileID: 0}
   m_Arrow: {fileID: 0}
+  m_NowWeapon: {fileID: 0}
   m_Effect: {fileID: 0}
 --- !u!1001 &746697684
 PrefabInstance:
