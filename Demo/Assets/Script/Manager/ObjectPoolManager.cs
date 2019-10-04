@@ -22,12 +22,13 @@ public class ObjectPoolManager : MonoBehaviour
         m_Instance = this;
         m_PrefabPathDict = new Dictionary<string, string>();
         m_PrefabDict = new Dictionary<string, List<GameObject>>();
+        Init();
     }
 
     private void Init()
     {
-        // 添加预制路径
-        m_PrefabPathDict.Add("", "");
+        // 添加预制路径 后期加 需要的预制体+路径
+        m_PrefabPathDict.Add("Cube", "Prefabs/Cube");
     }
 
     // Start is called before the first frame update
@@ -39,7 +40,7 @@ public class ObjectPoolManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public GameObject GetGameObject(string key)
@@ -85,5 +86,6 @@ public class ObjectPoolManager : MonoBehaviour
             list.Add(go);
             m_PrefabDict.Add(key, list);
         }
+        go.transform.parent = this.transform;
     }
 }
