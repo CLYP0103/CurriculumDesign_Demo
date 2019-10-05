@@ -16,7 +16,7 @@ public class RoleController : MonoBehaviour
     public float walkSpeed = 3.0f;
     public Vector3 roleMoveVelocity;
     public Vector3 thrustVelocity;
-
+    private bool weapon = true;
 
     [Header("===== Other =====")]
     //角色 对象
@@ -116,7 +116,11 @@ public class RoleController : MonoBehaviour
         //如果玩家按下背包键
         tryOpenKnapsack = pi.knapsack;
 
-
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            weapon = !weapon;
+            roleManager.ChangeWeapon(weapon ? 0 : 1);
+        }
 
     }
 
@@ -160,6 +164,11 @@ public class RoleController : MonoBehaviour
     public void SetAnimatorTrigger(string name)
     {
         roleAnimator.SetTrigger(name);
+    }
+
+    public void SetAnimatorFloat(string name,float value)
+    {
+        roleAnimator.SetFloat(name, value);
     }
 
     public void SetPlayerInputEnable(bool flag)

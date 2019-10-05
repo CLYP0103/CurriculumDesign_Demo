@@ -45,6 +45,10 @@ public class HeroEvent : MonoBehaviour
         roleController.SetWeaponActive(false);
     }
 
+    public void OnEnterShoot()
+    {
+    }
+
     public void SetSwordEffect(int flag)
     {
         roleController.SetEffectActive(flag == 1);

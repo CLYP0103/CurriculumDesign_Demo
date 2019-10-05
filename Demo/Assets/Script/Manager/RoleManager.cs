@@ -71,4 +71,10 @@ public class RoleManager : MonoBehaviour {
     {
         weaponManager.SetEffectActive(flag);
     }
+
+    public void ChangeWeapon(int id)
+    {
+        roleController.SetAnimatorFloat("attackId", id);
+        weaponManager.ChangeWeapon(id);
+    }
 }

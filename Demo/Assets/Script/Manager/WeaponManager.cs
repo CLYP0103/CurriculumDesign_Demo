@@ -34,4 +34,9 @@ public class WeaponManager : MonoBehaviour {
     {
         weaponController.SetEffectActive(flag);
     }
+
+    public void ChangeWeapon(int id)
+    {
+        weaponController.ChangeWeapon(id);
+    }
 }
