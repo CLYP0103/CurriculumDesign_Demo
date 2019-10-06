@@ -67,5 +67,6 @@ public class WeaponController : MonoBehaviour
         go.transform.position = m_Effect.transform.position;
         go.transform.forward = direction;
         go.transform.parent = null;
+        go.GetComponent<Rigidbody>().velocity = direction* 30f ;
     }
 }

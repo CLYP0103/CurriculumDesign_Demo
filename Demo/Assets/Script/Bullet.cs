@@ -33,13 +33,15 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed);
         timer.Tick();
         if(timer.state == MyTimer.STATE.FINISHED)
         {
             ObjectPoolManager.Instacne.RecycleGameObject("Bullet_Blue", transform.gameObject);
         }
     }
+
+    
 
     private void OnCollisionEnter(Collision collision)
     {
