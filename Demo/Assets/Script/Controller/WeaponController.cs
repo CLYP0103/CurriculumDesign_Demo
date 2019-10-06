@@ -32,7 +32,7 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -58,5 +58,14 @@ public class WeaponController : MonoBehaviour
     {
         m_NowWeapon = m_WeaponDict[id];
         m_Effect = m_NowWeapon.transform.Find("Effect").gameObject;
+    }
+
+    public void SetShootEffect(string effectName,Vector3 direction)
+    {
+        GameObject go = ObjectPoolManager.Instacne.GetGameObject(effectName);
+        //go.transform.position = m_Effect.transform.position;
+        go.transform.position = m_Effect.transform.position;
+        go.transform.forward = direction;
+        go.transform.parent = null;
     }
 }

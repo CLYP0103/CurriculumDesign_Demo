@@ -39,4 +39,9 @@ public class WeaponManager : MonoBehaviour {
     {
         weaponController.ChangeWeapon(id);
     }
+
+    public void SetShootEffect(string effectName, Vector3 direction)
+    {
+        weaponController.SetShootEffect(effectName, direction);
+    }
 }

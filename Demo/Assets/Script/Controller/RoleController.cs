@@ -185,6 +185,11 @@ public class RoleController : MonoBehaviour
     {
         roleManager.SetEffectActive(flag);
     }
+
+    public void SetShootEffect(string effectName)
+    {
+        roleManager.SetShootEffect(effectName, role.transform.forward);
+    }
 }
 
 

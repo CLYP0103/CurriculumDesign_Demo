@@ -66,15 +66,15 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8886554
-        functionName: OnExitAttack
-        data: 
+      - time: 0.3428135
+        functionName: OnEnterShoot
+        data: Bullet_Blue
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.31234255
-        functionName: OnEnterShot
+      - time: 0.8886554
+        functionName: OnExitAttack
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
