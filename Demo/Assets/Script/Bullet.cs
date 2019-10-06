@@ -9,10 +9,15 @@ public class Bullet : MonoBehaviour
 
     public float speed = 8.0f;
     public float liveTime = 10.0f;
+    public MyTimer timer;
 
     [HideInInspector]
     public Vector3 impactNormal; //Used to rotate impactparticle.
 
+    private void Awake()
+    {
+        timer = new MyTimer(liveTime);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +27,18 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        ObjectPoolManager.Instacne.RecycleGameObject("Bullet_Blue", transform.gameObject, liveTime);
+        timer.Go();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        timer.Tick();
+        if(timer.state == MyTimer.STATE.FINISHED)
+        {
+            ObjectPoolManager.Instacne.RecycleGameObject("Bullet_Blue", transform.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

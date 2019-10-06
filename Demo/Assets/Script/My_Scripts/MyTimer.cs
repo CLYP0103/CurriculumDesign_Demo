@@ -17,6 +17,16 @@ public class MyTimer  {
 
     public float elapsedTime = 0f;
 
+    public MyTimer()
+    {
+
+    }
+
+    public MyTimer(float time)
+    {
+        duration = time;
+    }
+
     public void Tick()
     {
         switch (state)
@@ -40,5 +50,4 @@ public class MyTimer  {
         elapsedTime = 0f;
         state = STATE.RUN;
     }
-	
 }
