@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3198066442674829573}
   m_Layer: 0
   m_Name: Bullet_Blue
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   impactParticle: {fileID: 193692, guid: 2aa1e7c21640d254492fa8035a6411e1, type: 3}
   projectileParticle: {fileID: 0}
   speed: 8
+  liveTime: 10
   impactNormal: {x: 0, y: 0, z: 0}
 --- !u!135 &3198066442674829573
 SphereCollider:
@@ -57,7 +58,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3198066442674829572}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.15
