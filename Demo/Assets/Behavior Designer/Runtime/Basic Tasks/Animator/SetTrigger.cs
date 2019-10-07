@@ -16,6 +16,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Basic.UnityAnimator
 
         public override void OnStart()
         {
+            BehaviorTreesManager.attack = true;
             var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
             if (currentGameObject != prevGameObject) {
                 animator = currentGameObject.GetComponent<Animator>();
