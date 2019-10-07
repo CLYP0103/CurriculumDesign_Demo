@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
+using System.Linq;
+
 using UnityEngine;
 
 public class AIController : MonoBehaviour {
@@ -11,20 +12,34 @@ public class AIController : MonoBehaviour {
     }
     // Start is called before the first frame update
     void Start() {
-        
     }
 
-    
     // Update is called once per frame
+    private float dis = 0;
     void Update() {
+        Vector3 enemyPos = transform.position;
+        Vector3 playerPos = GameObject.Find("PlayerHandle").transform.position;
+        dis = Vector3.Distance(enemyPos, playerPos);
+        Debug.Log(dis);
+        if (dis >= 1.6 && BehaviorTreesManager.attack) {
+            BehaviorTreesManager.Instance.Patrol();
+            Debug.Log("超出距离");
+            BehaviorTreesManager.attack = false;
 
-    }
-    void OnCollisionEnter(Collision collision) { // 销毁当前游戏物体
-        if ((collision.gameObject.tag == "Weapon")) {
-            animator.SetTrigger("hit");
-            Debug.Log("asd");
         }
-        print(collision.gameObject.name);
+    }
+    // 受击
+    void OnCollisionEnter(Collision collision) { 
+        if (collision.gameObject.tag == "Weapon") {
+            animator.SetTrigger("hit");
+            BehaviorTreesManager.Instance.Hit();
+            Debug.Log("Patrol禁用");
+            
+            
+             //hit状态下超出范围
+            
+            //transform.LookAt(GameObject.Find("PlayerHandle").transform.position);
+        }
     }
 
     // 碰撞结束
