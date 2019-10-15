@@ -133,7 +133,6 @@ public class RoleController : MonoBehaviour
         //冲量置零
         thrustVelocity = Vector3.zero;
 
-
     }
 
 
