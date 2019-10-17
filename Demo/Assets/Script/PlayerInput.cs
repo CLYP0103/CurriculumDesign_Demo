@@ -99,7 +99,6 @@ public class PlayerInput : MonoBehaviour {
 
         //背包
         knapsack =  ButtonG.onPressed ;
-
     }
 
 
