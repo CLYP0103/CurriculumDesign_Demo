@@ -9,7 +9,7 @@ public class RoleManager : MonoBehaviour {
     //[Header("===== 角色各种Manager =====")]
     //[Header("===== StateManager =====")]
     ////StateManager 负责管理角色属性 例如生命
-    //public StateManager stateManager;
+    public StateManager stateManager;
     //public bool add;
     //public bool reduce;
 
@@ -29,8 +29,8 @@ public class RoleManager : MonoBehaviour {
     private void Awake()
     {
         //获取 StateManager
-        //stateManager = GetComponent<StateManager>();
-        //stateManager.roleManager = this;
+        stateManager = transform.DeepFind("Sensor").GetComponent<StateManager>();
+        stateManager.roleManager = this;
 
         //获取 WeaponManager
         weaponManager = transform.Find("WeaponHandle").GetComponent<WeaponManager>();
@@ -81,5 +81,10 @@ public class RoleManager : MonoBehaviour {
     public void SetShootEffect(string effectName, Vector3 direction)
     {
         weaponManager.SetShootEffect(effectName, direction);
+    }
+
+    public void SetTrigger(string triggerName)
+    {
+        roleController.SetAnimatorTrigger(triggerName);
     }
 }
