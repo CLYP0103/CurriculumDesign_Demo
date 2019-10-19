@@ -54,4 +54,19 @@ public class HeroEvent : MonoBehaviour
     {
         roleController.SetEffectActive(flag == 1);
     }
+
+    public void OnEnterDie()
+    {
+        roleController.SetPlayerInputEnable(false);
+    }
+
+    public void OnEnterHit()
+    {
+        roleController.SetPlayerInputEnable(false);
+    }
+
+    public void OnExitHit()
+    {
+        roleController.SetPlayerInputEnable(true);
+    }
 }
