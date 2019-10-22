@@ -14,7 +14,9 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("Start");
+        }
     }
 
     public void Continue() {
@@ -22,6 +24,6 @@ public class GameOver : MonoBehaviour
     }
 
     public void Quit() {
-        Application.Quit();
+        SceneManager.LoadScene("Start");
     }
 }

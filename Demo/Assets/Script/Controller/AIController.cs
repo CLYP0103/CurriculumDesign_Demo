@@ -19,10 +19,10 @@ public class AIController : MonoBehaviour {
         Vector3 enemyPos = transform.position;
         Vector3 playerPos = GameObject.Find("PlayerHandle").transform.position;
         dis = Vector3.Distance(enemyPos, playerPos);
-        Debug.Log(dis);
+        //Debug.Log(dis);
         if (dis >= 1.6 && BehaviorTreesManager.attack) {
             BehaviorTreesManager.Instance.Patrol();
-            Debug.Log("超出距离");
+            //Debug.Log("超出距离");
             BehaviorTreesManager.attack = false;
 
         }
